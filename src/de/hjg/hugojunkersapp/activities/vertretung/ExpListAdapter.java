@@ -59,7 +59,7 @@ public class ExpListAdapter extends BaseExpandableListAdapter {
 		try {
 		number.setText(String.valueOf(VertretungDataSource.getVertretungenByClass(tempChild.get(childPosition)).size()));
 		} catch (Exception ex) {
-			Log.e("data", "number: " + String.valueOf(VertretungDataSource.getVertretungenByClass(tempChild.get(childPosition)).size()) + ex.getMessage());
+			Log.e("data", "number: " + String.valueOf(VertretungDataSource.getVertretungenByClass(tempChild.get(childPosition)).size()));
 		}
 		return convertView;
 	}
