@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/splash_background_radial" >
+
+    <EditText
+        android:id="@+id/splash_username"
+        android:layout_width="244dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/splash_password"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="200dp"
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint="@string/username"
+        android:inputType="text"
+        android:textStyle="normal"
+        android:typeface="sans"
+        android:drawableLeft="@drawable/ic_action_user"
+        android:visibility="invisible" />
+    
+        <EditText
+        android:id="@+id/splash_password"
+        android:layout_width="244dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/splash_username"
+        android:layout_centerHorizontal="true"
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:textStyle="normal"
+        android:typeface="sans"
+        android:drawableLeft="@drawable/ic_action_key"
+        android:visibility="invisible" />
+        
+        
+    <Button
+        android:id="@+id/button_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/splash_password"
+        android:layout_centerHorizontal="true"
+        android:minHeight="40dp"
+        android:minWidth="244dp"
+        android:layout_marginTop="15dp"
+        android:height="20dp"
+        android:text="@string/login"
+        android:visibility="invisible"
+        android:drawableLeft="@drawable/ic_action_tick"
+        />
+
+    <ImageView
+        android:id="@+id/hugo_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/button_login"
+        android:layout_alignLeft="@+id/splash_password"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/splash_password"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="130dp"
+        android:visibility="invisible"
+        android:scaleType="centerInside"
+        android:src="@drawable/hjg_logo_text" />
+
+    <TextView
+        android:id="@+id/register_link"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/hugo_logo"
+        android:layout_marginBottom="18dp"
+        android:clickable="true"
+        android:textSize="20sp"
+        android:text="@string/register_splash" />
+
+    <ProgressBar
+        android:id="@+id/splashScreen_progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/button_login"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible" />
+
+</RelativeLayout>

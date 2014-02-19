@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/splash_background_radial" >
+
+    <TextView
+        android:id="@+id/register_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="23dp"
+        android:layout_marginTop="18dp"
+        android:text="@string/register_textview"
+        android:textSize="25sp" />
+
+    <EditText
+        android:id="@+id/register_password"
+        android:layout_width="244dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/register_email"
+        android:layout_below="@+id/register_email"
+        android:drawableLeft="@drawable/ic_action_key"
+        android:hint="@string/password_hint"
+        android:inputType="textPassword"
+        android:typeface="sans" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/register_username"
+        android:layout_width="244dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/register_textview"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:drawableLeft="@drawable/ic_action_user"
+        android:hint="@string/username"
+        android:inputType="text"
+        android:textStyle="normal"
+        android:typeface="sans" />
+
+    <TextView
+        android:id="@+id/register_textView_class"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/register_username"
+        android:layout_below="@+id/register_personName"
+        android:text="@string/course" />
+
+    <Spinner
+        android:id="@+id/register_class"
+        android:layout_width="244dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/register_textView_class"
+        android:layout_below="@+id/register_textView_class"
+        android:entries="@array/klassen_list" />
+
+    <EditText
+        android:id="@+id/register_personName"
+        android:layout_width="244dp"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/register_username"
+        android:layout_below="@+id/register_username"
+        android:drawableLeft="@drawable/ic_action_user"
+        android:hint="@string/personName_hint"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/register_email"
+        android:layout_width="244dp"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/register_class"
+        android:layout_below="@+id/register_class"
+        android:drawableLeft="@drawable/ic_action_mail"
+        android:hint="@string/email_hint"
+        android:inputType="textEmailAddress"
+        android:typeface="sans" />
+
+    <Button
+        android:id="@+id/button_register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/register_password"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="18dp"
+        android:drawableLeft="@drawable/ic_action_tick"
+        android:height="20dp"
+        android:minHeight="40dp"
+        android:minWidth="244dp"
+        android:text="@string/button_register" />
+
+    <EditText
+        android:id="@+id/register_password_again"
+        android:layout_width="244dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/register_password"
+        android:layout_below="@+id/register_password"
+        android:drawableLeft="@drawable/ic_action_key"
+        android:hint="@string/password_again_hint"
+        android:inputType="textPassword"
+        android:textStyle="normal"
+        android:typeface="sans" />
+
+    <TextView
+        android:id="@+id/register_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button_register"
+        android:layout_alignRight="@+id/button_register"/>
+
+    <ProgressBar
+        android:id="@+id/register_progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/button_register"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible" />
+
+</RelativeLayout>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+  
+ 
+
+  <com.sothree.slidinguppanel.SlidingUpPanelLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+      android:id="@+id/sliding_layout"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+      
+      
+       <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:background="#eee"
+          android:orientation="vertical">
+          
+          <ListView
+		android:id="@+id/list"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:choiceMode="singleChoice"/>
+  		</LinearLayout>
+
+      
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:orientation="vertical">
+
+          <TextView
+              android:id="@+id/pull"
+              android:layout_width="match_parent"
+              android:layout_height="68dp"
+              android:gravity="center"
+              android:text="Für genauere Infos zur zuletzt ausgewählten Vertretung hier ziehen."
+              android:background="#111"
+              android:textColor="#eee"
+              android:textStyle="bold"
+              android:textSize="16sp" />
+
+			<RelativeLayout
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:background="#A1FFE2BA">
+				
+				
+				                
+				<LinearLayout
+					android:id="@+id/content_slide_view"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal">
+					  
+				
+				</LinearLayout>
+			<ImageView
+				android:id="@+id/background"
+				android:layout_width="fill_parent"
+				android:layout_height="fill_parent"
+				android:src="@drawable/hjg_logo_text"
+				android:scaleType="fitCenter"
+				android:layout_below="@id/content_slide_view"/>
+			</RelativeLayout>
+				
+		</LinearLayout>
+
+  </com.sothree.slidinguppanel.SlidingUpPanelLayout>
+

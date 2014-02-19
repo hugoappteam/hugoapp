@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListPreference
+        android:key="pref_Klasse"
+        android:title="Deine Klasse"
+        android:dialogTitle="Klasse wählen"
+        android:entries="@array/klassen_list"
+        android:entryValues="@array/klassen_list"/>
+    <ListPreference
+        android:key="pref_start_view"
+        android:title="Startansicht"
+        android:dialogTitle="Ansicht wählen"
+        android:entries="@array/view"
+        android:entryValues="@array/view_selection"
+        android:defaultValue="0"/>
+    
+    <PreferenceCategory 
+        android:key="pref_Update"
+        android:title="Update">
+        
+        <CheckBoxPreference
+            android:key="pref_wlan_only"
+            android:title="Daten nur über WLAN aktualisieren"
+            android:defaultValue="false"/>
+        
+        <ListPreference
+            android:key="pref_update_period"
+            android:title="Update Periode"
+            android:dialogTitle="Daten updaten nach ..."
+            android:entries="@array/update_options"
+            android:entryValues="@array/update"
+            android:defaultValue="30"/>
+        
+    </PreferenceCategory>
+    
+	<PreferenceCategory
+	    android:title="Info">
+	    <PreferenceScreen
+	        android:title="Credits"
+	        android:persistent="false">
+			<Preference
+	        	android:title="Hinweis"
+	        	android:summary="@string/info">        
+	    	</Preference>
+	    	
+			<Preference
+	        	android:title="Version"
+	        	android:summary="@string/version_info">        
+	    	</Preference>
+	    	
+			<PreferenceCategory
+			    android:title="Impressum">
+	        	<Preference
+	        		android:title="Entwickler"
+	        		android:summary="@string/developer">        
+	    		</Preference>
+	    		<Preference
+	        		android:title="Kontakt"
+	        		android:summary="@string/kontakt">
+	        		    <intent android:action="android.intent.action.VIEW"
+	      						android:data="mailto:admin@hjg.pf-control.de"/>
+	    		</Preference>
+	    		<Preference
+	        		android:title="Mit freundlicher Unterstützung"
+	        		android:summary="@string/unterstützer">        
+	    		</Preference>
+	    		
+			</PreferenceCategory>
+			<PreferenceCategory
+			    android:title="Links"
+			    android:summary="hjg.pf-control.de">
+	    		<Preference
+	    		    android:title="Webversion">
+	    		    <intent android:action="android.intent.action.VIEW"
+	    		        	android:data="http://hjg.pf-control.de/"/>
+	    		</Preference>
+			    <Preference
+	    		    android:title="Hugo-Junkers-Gymnasium"
+	    		    android:summary="hugo-junkers-gymnasium.de">
+	    		    <intent android:action="android.intent.action.VIEW"
+	    		        	android:data="http://hugo-junkers-gymnasium.de/"/>
+	    		</Preference>
+			</PreferenceCategory>
+	
+	        
+	    </PreferenceScreen>
+	</PreferenceCategory>
+    
+    
+	
+</PreferenceScreen>

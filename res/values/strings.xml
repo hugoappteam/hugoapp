@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Hugo Junkers App</string>
+    
+    <string name="empty_string"></string>
+	
+	<string name="hello_world">Hallo Welt</string>
+
+    <string name="title_activity_login">Login</string>
+    
+    <!-- MENU -->
+    <string name="menu_substitution">Vertretungsplan</string>
+    <string name="menu_substitution2">Vertretungsplan V. 2</string>
+    <string name="menu_settings">Einstellungen</string>
+    
+    <string name="username">Benutzername</string>
+    <string name="password">Passwort</string>
+    <string name="Forename">Vorname</string>
+    <string name="Surname">Nachname</string>
+    <string name="login">Einloggen</string>
+      
+    <string name="image_desc">Description</string>
+    <string-array name="klassen_list">
+        <item >05a</item>
+        <item >05b</item>
+        <item >05c</item>
+        <item >06a</item>
+        <item >06b</item>
+        <item >06c</item>
+        <item >07a</item>
+        <item >07b</item>
+        <item >07c</item>
+        <item >08a</item>
+        <item >08b</item>
+        <item >08c</item>
+        <item >09a</item>
+        <item >09b</item>
+        <item >09c</item>
+        <item >EF</item>
+        <item >Q1</item>
+        <item >Q2</item>        
+    </string-array>
+
+    <string-array name="update_options">
+        <item >1 Minute</item>
+        <item >15 Minuten</item>
+        <item >30 Minuten</item>
+        <item >60 Minuten</item>
+        <item >90 Minuten</item>
+        <item >120 Minuten</item>
+    </string-array>
+    <string-array name="update">
+        <item >1</item>
+        <item >15</item>
+        <item >30</item>
+        <item >60</item>
+        <item >90</item>
+        <item >120</item>
+   	</string-array>
+   	<string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="action_websearch">Web search</string>
+    <string name="app_not_available">Sorry, there\'s no web browser available</string>
+    
+    <!-- No UI-Strings  -->
+    <string name="version_info">Version 1.0</string>
+    <string name="JSONLoginAddress">http://hjg.pf-control.de/login.php</string>
+    <string name="JSONAddress">http://hjg.pf-control.de/JSON.php</string>
+    <string name="app_label">HJG</string>
+    <string name="search_hint">Suche</string>
+    <string name="info">Wir übernehmen keine Verantwortung für die Vollständigkeit, Richtigkeit und Aktualität der dargestellten Inhalte. \nFür daraus resultierendes Fehlverhalten ist außschließlich der Nutzer verantwortlich.</string>
+	<string name="developer">Niklas Dohmen\nErik Simon\nGerrit Farren\nIdee: Leo Neukirch</string>
+	<string name="kontakt">admin@hjg.pf-control.de</string>
+	<string name="unterstützer">Herr Reese\nFrau Wehling\nFrau Chittka</string>
+	<string-array name="view">
+		<item >Alle Vertretungen</item>
+		<item >Meine Vertretungen</item>
+	</string-array>
+	<string-array name="view_selection">
+		<item >0</item>
+		<item >1</item>
+	</string-array>
+	<string name="no_selection">Du hast keine Vertretung ausgewählt.</string>
+	<string name="ok">Ja</string>
+	<string name="no">Nein</string>
+	
+	
+	<!-- Splash Screen -->
+	<string name="register_splash"><u>Registrieren</u></string>
+	
+	
+	<!-- Register Screen -->
+	<string name="register_textview">Registrieren</string>
+	<string name="password_hint">Passwort</string>
+	<string name="password_again_hint">Passwort erneut</string>
+	<string name="button_register">Registrieren</string>
+	<string name="email_hint">E-Mail</string>
+	<string name="course">Klasse</string>
+	<string name="personName_hint">Vorname Nachname</string>
+	<string name="name">Name</string>
+	
+	
+	<string name="cancel">Abbrechen</string>
+	
+	<string name="fields_empty">Fülle bitte alle Felder aus</string>
+	<string name="personName_no_space">Bitte Vor- und Nachnamen angeben</string>
+	<string name="passwords_not_equal">Die Passwörter stimmen nicht überein</string>
+	<string name="email_invalid">Keine gültige E-Mail</string>
+	<string name="password_too_short">Das Passwort sollte mindestens 6 Zeichen lang sein</string>
+	<string name="personName_not_valid">Der Vor- und Nachname ist nicht gültig</string>
+	<!-- <string name=""></string> -->
+	
+</resources>
