@@ -17,7 +17,4 @@ public class helperShareClass {
 	public static boolean isSelected(){
 		return selected;
 	}
-
-	
-
 }

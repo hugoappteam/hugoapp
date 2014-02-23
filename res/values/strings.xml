@@ -85,7 +85,6 @@
 	<string name="ok">Ja</string>
 	<string name="no">Nein</string>
 	
-	
 	<!-- Splash Screen -->
 	<string name="register_splash"><u>Registrieren</u></string>
 	
@@ -102,8 +101,9 @@
 	
 	
 	<string name="cancel">Abbrechen</string>
-	
+	<string name="login_failed">Login fehlgeschlagen...</string>
 	<string name="fields_empty">Fülle bitte alle Felder aus</string>
+	<string name="username_too_short">Nutzername ist zu kurz</string>
 	<string name="personName_no_space">Bitte Vor- und Nachnamen angeben</string>
 	<string name="passwords_not_equal">Die Passwörter stimmen nicht überein</string>
 	<string name="email_invalid">Keine gültige E-Mail</string>

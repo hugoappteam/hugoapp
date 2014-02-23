@@ -70,6 +70,8 @@ public class JSONParser {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
+		} catch(Exception ex) {
+			Log.e("exception", ex.getMessage());
 		}
 
 		try {

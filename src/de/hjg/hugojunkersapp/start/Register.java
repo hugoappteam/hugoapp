@@ -10,6 +10,7 @@ import org.json.JSONObject;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
@@ -27,6 +28,7 @@ import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import de.hjg.hugojunkersapp.R;
 import de.hjg.hugojunkersapp.general.Utils;
 
@@ -34,7 +36,12 @@ public class Register extends Activity implements OnClickListener {
 
 	private static final String TAG_SUCCESS = "success";
 	private static final String TAG_MESSAGE = "message";
+	private static final int EMAIL_EXISTS = -1;
+	private static final int USERNAME_EXISTS = -2;
+	private static final int NO_INTERNET_CONNECTIVITY = -5;
 	private final String LOGIN_URL = "http://hjg.pf-control.de/JSONRegister.php";
+	
+	private Context context;
 
 	private EditText username;
 	private EditText password;
@@ -60,6 +67,7 @@ public class Register extends Activity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.register);
+		this.context = getApplicationContext();
 		username = (EditText) findViewById(R.id.register_username);
 		password = (EditText) findViewById(R.id.register_password);
 		password_retry = (EditText) findViewById(R.id.register_password_again);
@@ -103,28 +111,31 @@ public class Register extends Activity implements OnClickListener {
 				|| PersonName_string.matches("")) {
 			info.setText(R.string.fields_empty);
 			return false;
-
+		} else if (username.getText().length() < 3) {
+			username.setError(getString(R.string.username_too_short));
+			return false;	
+			
 		} else if (!PersonName_string.contains(" ")) {
-			info.setText(R.string.personName_no_space);
+			//info.setText(R.string.personName_no_space);
+			PersonName.setError(getString(R.string.personName_no_space));
 			return false;
 
 		} else if (!password_string.equals(password_retry_string)) {
-			info.setText(R.string.passwords_not_equal);
+			password_retry.setError(getString(R.string.passwords_not_equal));
+			//info.setText(R.string.passwords_not_equal);
 			return false;
-		} // else if(!email_string.contains("@")) {
-			// else if(!email_string.contains("@") ||
-			// (email_string.substring(email_string.length() - 1).equals("@")))
-			// {
-		else if (!Patterns.EMAIL_ADDRESS.matcher((CharSequence) email_string)
-				.matches()) {
-			info.setText(R.string.email_invalid);
+		} else if (!Patterns.EMAIL_ADDRESS.matcher((CharSequence) email_string).matches()) {
+			email.setError(getString(R.string.email_invalid));
+			//info.setText(R.string.email_invalid);
 			return false;
 		} else if (password_string.length() < 5) {
-			info.setText(R.string.password_too_short);
+			password.setError(getString(R.string.password_too_short));
+			//info.setText(R.string.password_too_short);
 			return false;
 		} else if (!Utils.CheckStringForName(PersonName_string)
 				|| PersonName_string.matches(".*\\d.*")) {
-			info.setText(R.string.personName_not_valid);
+			PersonName.setError(getString(R.string.personName_not_valid));
+			//info.setText(R.string.personName_not_valid);
 			return false;
 		}
 
@@ -199,7 +210,11 @@ public class Register extends Activity implements OnClickListener {
 		@Override
 		protected java.lang.String doInBackground(java.lang.String... params) {
 			// TODO Auto-generated method stub
-
+			
+			if (!Utils.checkForInternetConnectivity(context)) {
+				success = NO_INTERNET_CONNECTIVITY;
+				return null;
+			}
 			try {
 				List<NameValuePair> JsonParams = new ArrayList<NameValuePair>();
 				JsonParams.add(new BasicNameValuePair("username",
@@ -229,6 +244,11 @@ public class Register extends Activity implements OnClickListener {
 			} catch (JSONException e) {
 				Log.e("data", "failure by requesting http");
 				e.printStackTrace();
+				success = -404;
+			} catch(Exception ex) {
+				Log.e("exception", ex.getMessage());
+				success = -404;
+				return null;
 			}
 			return null;
 		}
@@ -242,14 +262,23 @@ public class Register extends Activity implements OnClickListener {
 				bar.setVisibility(View.INVISIBLE);
 				showDialogAfterRegister();
 
-			} else {
-				Toast toast = Toast.makeText(getApplicationContext(), message,
-						Toast.LENGTH_LONG);
+			} else if(success == NO_INTERNET_CONNECTIVITY) {
+				Toast toast = Toast.makeText(getApplicationContext(),
+						"Keine Internetverbindung...", Toast.LENGTH_LONG);
 				toast.show();
-				info.setText(message);
+			} else if(success == EMAIL_EXISTS) {
+					//email.setHighlightColor(Color.RED);
+					email.setError(message);
+			} else  if(success == USERNAME_EXISTS) {
+					username.setError(message);
+			} else {
+				Toast toast = Toast.makeText(getApplicationContext(),
+						"Fehler beim Laden der Daten", Toast.LENGTH_LONG);
+				toast.show();
+			}
+				
 				register_button.setEnabled(true);
 				bar.setVisibility(View.INVISIBLE);
 			}
 		}
 	}
-}

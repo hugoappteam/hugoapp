@@ -3,6 +3,10 @@ package de.hjg.hugojunkersapp.general;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+
 public class Utils {
 
 	public static String ComputeMD5Hash(String plainPassword) {
@@ -83,5 +87,17 @@ public class Utils {
 		}
 		return points;
 	}
+	
+	
+	public static boolean checkForInternetConnectivity(Context context) {
+
+	ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+	NetworkInfo netInfo = cm.getActiveNetworkInfo();
+	if(netInfo != null && netInfo.isConnectedOrConnecting()) {
+		return true;
+	}
+	return false;
+	}
+	
 
 }

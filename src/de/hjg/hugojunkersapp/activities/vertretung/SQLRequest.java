@@ -27,6 +27,7 @@ import de.hjg.hugojunkersapp.R;
 import de.hjg.hugojunkersapp.SQLite.VertretungDataSource;
 import de.hjg.hugojunkersapp.general.LogoScreen;
 import de.hjg.hugojunkersapp.general.SendNotification;
+import de.hjg.hugojunkersapp.general.Utils;
 
 @SuppressLint("NewApi")
 public class SQLRequest extends AsyncTask<Context, Integer, Boolean> {
@@ -59,7 +60,7 @@ public class SQLRequest extends AsyncTask<Context, Integer, Boolean> {
 	@Override
 	protected Boolean doInBackground(Context... con) {
 		
-		if(!isOnline()) {
+		if(!Utils.checkForInternetConnectivity(this.context)) {
 			result = "Keine Internetverbindung - Nur Lokale Daten verfügbar";
 			return false;
 		}
