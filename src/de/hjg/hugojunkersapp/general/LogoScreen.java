@@ -109,8 +109,8 @@ public class LogoScreen extends SherlockFragmentActivity {
 
 		lDrawerList.setOnItemClickListener(new DrawerItemClickListener());
 
-		getActionBar().setDisplayHomeAsUpEnabled(true);
-		getActionBar().setHomeButtonEnabled(true);
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		getSupportActionBar().setHomeButtonEnabled(true);
 
 		// left-hand sidenavigation eventhandler
 		lDrawerToggle = new ActionBarDrawerToggle(this, /* host Activity */
