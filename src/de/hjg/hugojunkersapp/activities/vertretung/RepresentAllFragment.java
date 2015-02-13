@@ -58,9 +58,9 @@ public final class RepresentAllFragment extends SherlockFragment  {
 
 		getSherlockActivity().setTitle("Alle Vertretungen");
 		//container.removeAllViews();
-		setHasOptionsMenu(true);
-		new SQLRequest(getSherlockActivity().getApplicationContext()).execute();
+		//new SQLRequest(getSherlockActivity().getApplicationContext()).execute();
 		reorganizeVertretungen();
+		setHasOptionsMenu(true);
 		return inflater.inflate(R.layout.represent_all_activity, container,
 				false);
 	}
@@ -68,7 +68,6 @@ public final class RepresentAllFragment extends SherlockFragment  {
 	@Override
 	public void onViewCreated(View view, Bundle savedInstanceState) {
 		super.onViewCreated(view, savedInstanceState);
-		Log.e("debugigng", "View created");
 
 		PagerSlidingTabStrip tabs = (PagerSlidingTabStrip) view
 				.findViewById(R.id.tabs);
@@ -100,7 +99,7 @@ public final class RepresentAllFragment extends SherlockFragment  {
 		final VertretungData vert;
 		vert = VertretungDataSource.getVertretungByID(helperShareClass.getSelection());
 		if(!helperShareClass.isSelected()){
-			Toast.makeText(getActivity(), "WÃ¤hle zuerst ein Element aus", Toast.LENGTH_LONG).show();
+			Toast.makeText(getActivity(), "WŠhle zuerst ein Element aus", Toast.LENGTH_LONG).show();
 			return;
 		}
 		
@@ -127,7 +126,7 @@ public final class RepresentAllFragment extends SherlockFragment  {
 			}
 		});
 	
-		builder.setMessage("MÃ¶chtest du diese Vertretung teilen?")
+		builder.setMessage("Mšchtest du diese Vertretung teilen?")
 	       		.setTitle("Teilen?");
 		AlertDialog dialog = builder.create();
 		dialog.show();

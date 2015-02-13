@@ -77,18 +77,18 @@ public class RepresentSearchedFragment extends SherlockFragment implements Adapt
 			if(vertretungen.size() == 0)
 			{
 				vertretungen = VertretungDataSource.getAllVertretungen();
-				Toast.makeText(getActivity(), "F√ºr deine Suche wurden keine Ergebnisse gefunden.", Toast.LENGTH_SHORT).show();
+				Toast.makeText(getActivity(), "Für deine Suche wurden keine Ergebnisse gefunden.", Toast.LENGTH_SHORT).show();
 			}
 			else
 			{
-				Toast.makeText(getActivity(), "Es wurden f√ºr die ausgew√§hlte Klasse keine Suchergebnisse gefunden.", Toast.LENGTH_SHORT).show();
+				Toast.makeText(getActivity(), "Es wurden für die ausgewählte Klasse keine Suchergebnisse gefunden.", Toast.LENGTH_SHORT).show();
 			}
 		}
 		
 		view = inflater.inflate(R.layout.represent_searched_fragment, container);
 		
 		this.UpPanel = (SlidingUpPanelLayout) view.findViewById(R.id.sliding_layout);
-		this.UpPanel.setShadowDrawable(getResources().getDrawable(R.drawable.above_shadow));
+		this.UpPanel.setBackgroundDrawable(getResources().getDrawable(R.drawable.above_shadow));
 		this.UpPanel.setAnchorPoint(0.3f);
 		this.UpPanel.setPanelSlideListener(new PanelSlideListener() {
 
@@ -100,22 +100,28 @@ public class RepresentSearchedFragment extends SherlockFragment implements Adapt
             @Override
             public void onPanelExpanded(View panel) {
          TextView t = (TextView) view.findViewById(R.id.pull);
-         t.setText("Zum Schlie√üen herunterziehen.");
+         t.setText("Zum Schließen herunterziehen.");
             }
 
             @Override
             public void onPanelCollapsed(View panel) {
          TextView t = (TextView) view.findViewById(R.id.pull);
-         t.setText("F√ºr genauere Infos zur zuletzt ausgew√§hlten Vertretung hier ziehen.");
+         t.setText("Für genauere Infos zur zuletzt ausgewählten Vertretung hier ziehen.");
 
             }
 
             @Override
             public void onPanelAnchored(View panel) {
          TextView t = (TextView) view.findViewById(R.id.pull);
-         t.setText("Zum Schlie√üen herunterziehen.");
+         t.setText("Zum Schließen herunterziehen.");
 
             }
+
+			@Override
+			public void onPanelHidden(View panel) {
+				// TODO Auto-generated method stub
+				
+			}
         });
 		
 		
@@ -178,7 +184,7 @@ public class RepresentSearchedFragment extends SherlockFragment implements Adapt
 		helperShareClass.setSelection(vert.getID());
 		
 		InfoPopup.showData(vertretungen.get(position), view, getActivity());
-		this.UpPanel.expandPane();
+		this.UpPanel.expandPanel();
 		TextView t = (TextView) view.findViewById(R.id.pull);
 		t.setText("Zum Schlie√üen herunterziehen.");
 		

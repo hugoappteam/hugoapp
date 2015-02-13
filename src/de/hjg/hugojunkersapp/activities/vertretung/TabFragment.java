@@ -40,8 +40,8 @@ public class TabFragment extends SherlockFragment implements
 		this.view = inflater.inflate(R.layout.tab_fragment, container, false);
 		
 		this.UpPanel = (SlidingUpPanelLayout) view.findViewById(R.id.sliding_layout);
-		this.UpPanel.setShadowDrawable(getResources().getDrawable(R.drawable.above_shadow));
-		this.UpPanel.setAnchorPoint(0.5f);
+		//this.UpPanel.setShadowDrawable(getResources().getDrawable(R.drawable.above_shadow));
+		//this.UpPanel.setAnchorPoint(0.5f);
 		//this.UpPanel.setSlidingEnabled(false);
 		
 		this.UpPanel.setPanelSlideListener(new PanelSlideListener() {
@@ -54,22 +54,28 @@ public class TabFragment extends SherlockFragment implements
             @Override
             public void onPanelExpanded(View panel) {
          TextView t = (TextView) view.findViewById(R.id.pull);
-         t.setText("Zum Schlie√üen herunterziehen.");
+         t.setText("Zum Schließen herunterziehen.");
             }
 
             @Override
             public void onPanelCollapsed(View panel) {
          TextView t = (TextView) view.findViewById(R.id.pull);
-         t.setText("F√ºr genauere Infos zur zuletzt ausgew√§hlten Vertretung hier ziehen.");
+         t.setText("Für genauere Infos zur zuletzt ausgewählten Vertretung hier ziehen.");
 
             }
 
             @Override
             public void onPanelAnchored(View panel) {
          TextView t = (TextView) view.findViewById(R.id.pull);
-         t.setText("Zum Schlie√üen herunterziehen.");
+         t.setText("Zum Schließen herunterziehen.");
 
             }
+
+			@Override
+			public void onPanelHidden(View panel) {
+				// TODO Auto-generated method stub
+				
+			}
         });
 		
 		TextView t = (TextView) view.findViewById(R.id.pull);
@@ -81,9 +87,7 @@ public class TabFragment extends SherlockFragment implements
 	public void onActivityCreated(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		int tab = 0;
-		Log.i("TabFragment", "created");
 		super.onActivityCreated(savedInstanceState);
-		Log.i("TabFragment", "got ListView");
 		try{
 			Log.e("TabNumber", String.valueOf(getArguments().getInt("Tab")));
 			tab = getArguments().getInt("Tab");
@@ -91,7 +95,6 @@ public class TabFragment extends SherlockFragment implements
 		}catch (Exception e){
 			tab = 0;
 		}
-		Log.e("test", "test message 1");
 		vertretungen = TabAdapter.vertretungen.get(tab);
 
 		Log.i("Vertretungen/day", String.valueOf(vertretungen.size()));
@@ -101,9 +104,6 @@ public class TabFragment extends SherlockFragment implements
 				vertretungen);
 		list.setAdapter(adapter);
 		list.setOnItemClickListener(this);
-		
-
-		Log.i("TabFragment", "set Adapter");
 	}
 
 	@Override
@@ -111,9 +111,9 @@ public class TabFragment extends SherlockFragment implements
 		helperShareClass.setSelection(vertretungen.get(position).getID());
 		
 		InfoPopup.showData(vertretungen.get(position), view, getActivity());
-		this.UpPanel.expandPane(0.5f);
+		this.UpPanel.expandPanel();
 		TextView t = (TextView) view.findViewById(R.id.pull);
-		t.setText("Zum Schlie√üen herunterziehen.");
+		t.setText("Zum Schließen herunterziehen.");
 	}
 	
 	

@@ -151,14 +151,17 @@ public class SplashScreen extends Activity implements AnimationListener,
 			pass = password.getText().toString();
 			getSharedPreferences(PREFS_NAME, MODE_PRIVATE).edit()
 					.putString(PREFS_LAST_USERNAME, user).commit();
+			
 
 			try {
 				List<NameValuePair> JsonParams = new ArrayList<NameValuePair>();
 				JsonParams.add(new BasicNameValuePair("username", user));
 				JsonParams.add(new BasicNameValuePair("password",
 						Utils.ComputeMD5Hash(pass)));
+				
 				JSONObject json = jsonParser.makeHttpRequest(LOGIN_URL, "POST",
 						JsonParams);
+				Log.i("json", json.toString());
 				Log.e("data", "request done");
 				this.success = json.getInt(TAG_SUCCESS);
 				this.message = json.getString(TAG_MESSAGE);
@@ -185,12 +188,13 @@ public class SplashScreen extends Activity implements AnimationListener,
 		protected void onPostExecute(String s) {
 			// dismiss the dialog once product deleted
 
-			getSharedPreferences(PREFS_NAME, MODE_PRIVATE).edit()
-					.putString(PREFS_USERNAME, user)
-					.putString(PREFS_PASSWORD, pass).commit();
+			
 
 			Log.e("data", "done.");
 			if (success == 1) {
+				getSharedPreferences(PREFS_NAME, MODE_PRIVATE).edit()
+				.putString(PREFS_USERNAME, user)
+				.putString(PREFS_PASSWORD, pass).commit();
 				Toast toast = Toast.makeText(getApplicationContext(),
 						"Login erfolgreich", Toast.LENGTH_LONG);
 				toast.show();

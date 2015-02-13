@@ -56,13 +56,11 @@ public class RepresentSelectedFragment extends SherlockFragment /*
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setRetainInstance(true);
-		Log.e("data", "onCreate");
 	}
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		Log.e("data", "onCreateView");
 		container.removeAllViews();
 		setHasOptionsMenu(true);
 		this.klasse = getArguments().getString("Klasse");
@@ -74,8 +72,7 @@ public class RepresentSelectedFragment extends SherlockFragment /*
 
 	@Override
 	public void onViewCreated(View view, Bundle savedInstanceState) {
-		Log.e("data", "onViewCreated");
-		Log.e("debugigng", "View created");
+
 		super.onViewCreated(view, savedInstanceState);
 
 		if(days.size() != 0) {

@@ -62,7 +62,7 @@
 	    		</Preference>
 	    		<Preference
 	        		android:title="Mit freundlicher Unterstützung"
-	        		android:summary="@string/unterstützer">        
+	        		android:summary="@string/unterstuetzer">        
 	    		</Preference>
 	    		
 			</PreferenceCategory>

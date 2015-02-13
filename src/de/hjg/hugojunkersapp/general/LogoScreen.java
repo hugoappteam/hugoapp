@@ -94,12 +94,7 @@ public class LogoScreen extends SherlockFragmentActivity {
 
 		// prepare left-hand sidenavigation
 		lDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-		/*
-		ViewGroup.LayoutParams params = lDrawerLayout.getLayoutParams();
-		params.width = 240;
-		params.height = ViewGroup.LayoutParams.MATCH_PARENT;
-		lDrawerLayout.requestLayout();
-		*/
+
 		drawerView = (LinearLayout) findViewById(R.id.drawer_view);
 		
 		lDrawerList = (ListView) findViewById(R.id.left_drawer);
@@ -241,26 +236,11 @@ public class LogoScreen extends SherlockFragmentActivity {
 		} else {
 			SharedPreferences sharedPreferences = PreferenceManager
 					.getDefaultSharedPreferences(this);
-			Log.e("data", sharedPreferences.getString(
-					"pref_start_view", "0"));
 			selectItem(Integer.parseInt(sharedPreferences.getString(
 					"pref_start_view", "0")));
 		}
 		
-		//is this necessary???
-		/*
-		try {
-			if (intent.getAction().equals("android.intent.action.NOTIFICATION")) {
-				selectItem(1);
-			}
-		} catch (NullPointerException e) {
-			SharedPreferences sharedPreferences = PreferenceManager
-					.getDefaultSharedPreferences(this);
-			selectItem(Integer.parseInt(sharedPreferences.getString(
-					"pref_start_view", "0")));
-		}
-
-		this.selectItem(0);*/
+		
 	}
 
 	// detect search intents delivered by singleTop
@@ -352,7 +332,6 @@ public class LogoScreen extends SherlockFragmentActivity {
 
 		switch (position) {
 		case 0:
-			Log.e("debugging", "case 0");
 			fr = new RepresentAllFragment();
 			// fr = new PageSlidingTabStripFragment();
 			fragmentManager = getSupportFragmentManager();
@@ -368,7 +347,7 @@ public class LogoScreen extends SherlockFragmentActivity {
 			break;
 
 		case 1:
-			Log.e("debugging", "case 1");
+
 			SharedPreferences sharedPref = PreferenceManager
 					.getDefaultSharedPreferences(getApplicationContext());
 			if (sharedPref.getString("pref_Klasse", null) != null) {
@@ -395,14 +374,7 @@ public class LogoScreen extends SherlockFragmentActivity {
 			break;
 
 		case 2:
-			Log.e("debugging", "case 2");
-			// TODO: use Fragment instead of Activity - is this impossible?
-			/*
-			 * fr = new SettingsActivity(); fragmentManager =
-			 * getSupportFragmentManager();
-			 * fragmentManager.beginTransaction().replace(R.id.content_frame,
-			 * fr).commit();
-			 */
+
 
 			Intent settings = new Intent(this.getApplicationContext(),
 					SettingsActivity.class);
@@ -415,7 +387,7 @@ public class LogoScreen extends SherlockFragmentActivity {
 			break;
 
 		case 3:
-			Log.e("debugging", "case 3");
+
 			this.finish();
 			Intent intent_splashScreen = new Intent(
 					this.getApplicationContext(), SplashScreen.class);

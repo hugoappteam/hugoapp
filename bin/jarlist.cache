@@ -1,6 +1,5 @@
-# cache for current jar dependecy. DO NOT EDIT.
+# cache for current jar dependency. DO NOT EDIT.
 # format is <lastModified> <length> <SHA-1> <path>
 # Encoding is UTF-8
-1381461452000 556198 4a6be13368bb64c5a0b0460632d228a1a915f58f /home/niklas/HugoAppWorkspace/actionbarsherlock/libs/android-support-v4.jar
-1381461452000 556198 4a6be13368bb64c5a0b0460632d228a1a915f58f /home/niklas/HugoAppWorkspace/PagerSlidingTabStrip/libs/android-support-v4.jar
-1385838724000 556198 4a6be13368bb64c5a0b0460632d228a1a915f58f /home/niklas/HugoAppWorkspace/SlidingPanel/libs/android-support-v4.jar
+1414518427000 987314 3b20dc871d179ba476082efe543dc1b38db46e30 /Users/kbs/Documents/Development Eclipse/Library/ActionBarSherlock-master/actionbarsherlock/libs/android-support-v4.jar
+1414518427000 987314 3b20dc871d179ba476082efe543dc1b38db46e30 /Users/kbs/Documents/Development Eclipse/Library/AndroidSlidingUpPanel-master/library/libs/android-support-v4.jar

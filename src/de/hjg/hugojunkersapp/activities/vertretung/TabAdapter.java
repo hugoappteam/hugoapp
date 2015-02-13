@@ -36,7 +36,6 @@ public class TabAdapter extends FragmentPagerAdapter {
 		Log.e("TabNumber", String.valueOf(i));
 		args.putInt("Tab", i);
 		fragment.setArguments(args);
-		Log.i("TabAdapter", "set fragment");
 		return fragment;
 	}
 

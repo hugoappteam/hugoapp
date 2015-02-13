@@ -71,7 +71,7 @@
     <string name="info">Wir übernehmen keine Verantwortung für die Vollständigkeit, Richtigkeit und Aktualität der dargestellten Inhalte. \nFür daraus resultierendes Fehlverhalten ist außschließlich der Nutzer verantwortlich.</string>
 	<string name="developer">Niklas Dohmen\nGerrit Farren</string>
 	<string name="kontakt">admin@hjg.pf-control.de</string>
-	<string name="unterstützer">Herr Reese\nFrau Wehling\nFrau Chittka</string>
+	<string name="unterstuetzer">Herr Reese\nFrau Wehling\nFrau Chittka</string>
 	<string-array name="view">
 		<item >Alle Vertretungen</item>
 		<item >Meine Vertretungen</item>

@@ -34,7 +34,6 @@ public class SelectedTabAdapter extends FragmentPagerAdapter {
 		Bundle args = new Bundle();
 		args.putInt("Tab", i);
 		fragment.setArguments(args);
-		Log.i("TabAdapter", "set fragment");
 		return fragment;
 	}
 

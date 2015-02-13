@@ -27,7 +27,6 @@ public class SimpleVertretungListAdapter extends ArrayAdapter<VertretungData> {
 				Context.LAYOUT_INFLATER_SERVICE);
 		this.context = context;
 		layoutResId = resid;
-		Log.i("ListAdapter", "Adapter called");
 	}
 
 	@Override
@@ -101,7 +100,7 @@ public class SimpleVertretungListAdapter extends ArrayAdapter<VertretungData> {
 	@Override
 	public int getCount() {
 		// TODO Auto-generated method stub
-		Log.i("ListAdapter", "got Count" + String.valueOf(vertretungen.size()));
+		//Log.i("ListAdapter", "got Count" + String.valueOf(vertretungen.size()));
 		return vertretungen.size();
 	}
 
