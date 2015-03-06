@@ -118,8 +118,8 @@ public class SQLRequest extends AsyncTask<Context, Integer, Boolean> {
 			Toast toast = Toast.makeText(context, result, Toast.LENGTH_LONG);
 			toast.show();
 		} else {
-			LogoScreen.getExpListView().setAdapter(
-					LogoScreen.getExpandableListAdapter());
+			LogoScreen.getExpListView().setAdapter(LogoScreen.getExpandableListAdapter());
+			
 			if (notify != null) {
 				notify.setNew(VertretungDataSource
 						.getVertretungenByClass(sharedPref.getString("pref_Klasse",
